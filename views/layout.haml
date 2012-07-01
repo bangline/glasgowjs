@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %title Glasgow JavaScript User Group
+
+    %link{ rel:  "stylesheet/less",
+           type: "text/css",
+           href: "/stylesheets/styles.less" }
+
+    %script{  type: "text/javascript",
+              src:  "http://cdnjs.cloudflare.com/ajax/libs/less.js/1.3.0/less-1.3.0.min.js" }
+
+    %script{  type: "text/javascript",
+              src:  "http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js" }
+
+    %meta{ name: "viewport",
+           content: "width=device-width, initial-scale=1.0" }
+
+  %body
+    %header
+      %h1 glasgow.js
+      %h2 Glasgow JavaScript User Group
+
+    %section
+      #signup
+        %form{action: "http://glasgowjs.us5.list-manage2.com/subscribe/post?u=0846f3f3376ebb215b629e72f&amp;id=5cfe60c5ca", method: "post", id: "mc-embedded-subscribe-form", name: "mc-embedded-subscribe-form", class: "validate", target: "_blank"}
+          %input{type: "email",  value: "", name: "EMAIL", id: "email-field", placeholder: "Enter email for updates"}
+          %input{type: "submit", value: "Subscribe", name: "subscribe", class:"btn btn-inverse"}
+
+      = next_meeting.to_s
+      = yield
+
+    %footer
+      Some fonts by Google and of course I'm using Twitter Bootstrap!
+      %br
+      &copy;glasgowjs.com

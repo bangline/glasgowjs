@@ -1,0 +1,46 @@
+@import 'bootstrap/bootstrap';
+@import url(http://fonts.googleapis.com/css?family=VT323);
+
+@superLightGray: #f1f1f1;
+
+.center-text {
+  text-align: center;
+}
+
+body {
+  .container-fluid;
+  font-family: @monoFontFamily;
+  background: @superLightGray url('../dots.png');
+}
+
+header {
+  padding: 10px;
+
+  h1 {
+    font-family: 'VT323', cursive;
+    line-height: 2.2em;
+    font-size: 5em;
+  }
+
+  h1, h2 {
+    .center-text;
+  }
+}
+
+#signup form{
+  .form-search;
+
+  #email-field {
+    width: 240px;
+    padding: 9px 14px;
+  }
+
+  .btn {
+    .btn-large;
+  }
+}
+
+footer {
+  padding: 10px 0;
+  .center-text;
+}
