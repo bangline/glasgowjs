@@ -1,15 +1,31 @@
 @import 'bootstrap/bootstrap';
+@import 'bootstrap/responsive';
 @import url(http://fonts.googleapis.com/css?family=VT323);
 
 @superLightGray: #f1f1f1;
+@LightGrayBorder: #f9f9f9;
 
 .center-text {
   text-align: center;
 }
 
+.boxy {
+  padding: 20px;
+  .box-shadow(0 6px 15px #ccc);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  text-shadow: 1px 2px 3px #AAA;
+}
+
+small {
+  font-size: 0.8em;
+}
+
 body {
-  .container-fluid;
-  font-family: @monoFontFamily;
   background: @superLightGray url('../dots.png');
 }
 
@@ -18,12 +34,40 @@ header {
 
   h1 {
     font-family: 'VT323', cursive;
-    line-height: 2.2em;
+    line-height: 2em;
     font-size: 5em;
   }
 
   h1, h2 {
     .center-text;
+  }
+}
+
+section {
+  margin-top: 10px;
+}
+
+aside {
+  .boxy;
+  border: @LightGrayBorder 10px solid;
+  background: @white;
+}
+
+aside.info {
+  .hidden-phone;
+}
+
+aside.mobile {
+  .visible-phone;
+}
+
+article {
+  .boxy;
+  border: @LightGrayBorder 10px solid;
+  background: @white;
+
+  p:first-child {
+    .lead;
   }
 }
 
@@ -41,6 +85,16 @@ header {
 }
 
 footer {
-  padding: 10px 0;
-  .center-text;
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+  header {
+    h2 {
+      font-size: 1.2em;
+    }
+  }
+  aside {
+    margin-top: 20px;
+  }
 }

@@ -16,21 +16,25 @@
     %meta{ name: "viewport",
            content: "width=device-width, initial-scale=1.0" }
 
-  %body
+  %body{class: 'container'}
     %header
       %h1 glasgow.js
       %h2 Glasgow JavaScript User Group
 
-    %section
-      #signup
-        %form{action: "http://glasgowjs.us5.list-manage2.com/subscribe/post?u=0846f3f3376ebb215b629e72f&amp;id=5cfe60c5ca", method: "post", id: "mc-embedded-subscribe-form", name: "mc-embedded-subscribe-form", class: "validate", target: "_blank"}
-          %input{type: "email",  value: "", name: "EMAIL", id: "email-field", placeholder: "Enter email for updates"}
-          %input{type: "submit", value: "Subscribe", name: "subscribe", class:"btn btn-inverse"}
+    %section{class: 'row'}
+      %aside{class: 'mobile span4'}
+        #next-meeting
+          %h3
+            = "Next Meeting: #{@next_meeting.strftime("%A #{@next_meeting.day.ordinalize} of %B")}"
 
-      = next_meeting.to_s
-      = yield
+      %article{class: 'span8'}
+        = yield
+
+      %aside{class: 'info span4'}
+        #next-meeting
+          %h3
+            = "Next Meeting: #{@next_meeting.strftime("%A #{@next_meeting.day.ordinalize} of %B")}"
 
     %footer
-      Some fonts by Google and of course I'm using Twitter Bootstrap!
-      %br
-      &copy;glasgowjs.com
+      %small
+        Some fonts by Google and of course I'm using Twitter Bootstrap!
