@@ -16,25 +16,107 @@
     %meta{ name: "viewport",
            content: "width=device-width, initial-scale=1.0" }
 
-  %body{class: 'container'}
-    %header
-      %h1 glasgow.js
-      %h2 Glasgow JavaScript User Group
+  %body
+    %header{class: 'container'}
+      %img{src: '/GJS_small.png'}
+      %h1{id: 'logo'}
+        Glasgow.js
+        %br
+        %span{class: 'subheading'}The Glasgow JavaScript User Group
 
-    %section{class: 'row'}
-      %aside{class: 'mobile span4'}
-        #next-meeting
-          %h3
-            = "Next Meeting: #{@next_meeting.strftime("%A #{@next_meeting.day.ordinalize} of %B")}"
+      %aside
+        %ul{class: 'nav-pills'}
+          %li
+            %a{href: '#'}
+              %i{class: "icon-film icon-white"}
+              Videos
+          %li
+            %a{href: '#location'}
+              %i{class: "icon-screenshot icon-white"}
+              Where?
+          %li
+            %a{href: 'http://lanyrd.com/2012/glasgow-js/'}
+              %i{class: "icon-pencil icon-white"}
+              Sign up
 
-      %article{class: 'span8'}
-        = yield
+    %section{class: 'container', id: 'next-meetup'}
+      .row
+        .span8
+          %h1{id: 'meeting-date'}
+            Next Meeting:
+            %span{class: 'highlight'}
+              = "#{@next_meeting.strftime("%A #{@next_meeting.day.ordinalize} of %B")}"
 
-      %aside{class: 'info span4'}
-        #next-meeting
-          %h3
-            = "Next Meeting: #{@next_meeting.strftime("%A #{@next_meeting.day.ordinalize} of %B")}"
+          %article{id: 'next-meeting'}
+            .speaker
+              .avatar-container
+                %img{class: 'speaker-avatar', src: "http://a0.twimg.com/profile_images/67954182/1_normal.jpg"}
+              %h2 A PRESENTATION
+              %h3 A. Speaker
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet nunc nec leo gravida malesuada nec at nisi. Maecenas aliquam nisl nec nisi tempor accumsan. Integer mi nisl, molestie at commodo vitae, volutpat at ligula. Etiam tristique dolor sit amet ligula gravida vel suscipit tellus tempor. Nullam posuere consectetur sagittis. Vivamus justo dui, ornare in pellentesque vitae, molestie eu ante. Nulla bibendum lorem non dolor dignissim suscipit tempus sapien dignissim.
 
-    %footer
-      %small
-        Some fonts by Google and of course I'm using Twitter Bootstrap!
+              .connect
+                %a{href: '#'}mywebsite.com
+                %a{href: '#'}Twitter
+                %a{href: '#'}Github
+
+            .speaker
+              .avatar-container
+                %img{class: 'speaker-avatar', src: "http://a0.twimg.com/profile_images/67954182/1_normal.jpg"}
+              %h2 A PRESENTATION
+              %h3 A. Speaker
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet nunc nec leo gravida malesuada nec at nisi. Maecenas aliquam nisl nec nisi tempor accumsan. Integer mi nisl, molestie at commodo vitae, volutpat at ligula. Etiam tristique dolor sit amet ligula gravida vel suscipit tellus tempor. Nullam posuere consectetur sagittis. Vivamus justo dui, ornare in pellentesque vitae, molestie eu ante. Nulla bibendum lorem non dolor dignissim suscipit tempus sapien dignissim.
+
+              .connect
+                %a{href: '#'}Twitter
+                %a{href: '#'}Github
+        .span4
+          #sponsors
+            %h3 Our illustrious Sponsors
+            %a{href: '#'}
+              %img{src: 'http://placekitten.com/300/170'}
+            %a{href: '#'}
+              %img{src: 'http://placekitten.com/300/170'}
+    #location
+      %section{class: 'container'}
+        %h1 Where to find us
+        .row
+          .span4
+            :markdown
+              ## To be finalised
+              Glasgow, Somewhere
+
+              The metup starts at 6:30 with the first session starting at 7pm.
+
+              There will be Food and Drink (Beer and Pizza) on your arrival, so please let us know you are coming by marking your attendance at [Lanyrd](http://lanyrd.com/2012/glasgow-js/)
+          .span8
+            :plain
+              <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?gl=uk&amp;ie=UTF8&amp;ll=55.860767,-4.242611&amp;spn=0.057995,0.154324&amp;t=m&amp;z=13&amp;output=embed"></iframe>
+    #about
+      %section{class:'container'}
+        .row
+          .span4
+            :markdown
+              ## Sessions
+              We don't think it should be all talks and presentations and we intend to include hack sessions, katas over the meetups.
+
+              Any ideas you have for katas or indeed ideas for the meetup in general, please let us know. The Glasgow JS Meetup is 100% aimed at the desires of it's members.
+
+              Just tweet at [@GLWjs](https://twitter.com/GLWjs), or email [info@glasgowjs.com](mailto:info@glasgowjs.com).
+          .span4
+            :markdown
+              ## Presentations
+              There are really only a few rules about presenting at Glasgow JS.
+
+              1. You show up
+              2. You dont mind the talk being recorded, and put online
+              3. No slides. Just code, Browser, Terminal etc.
+          .span4
+            :markdown
+              ## Speaking
+              If you are interested in speaking at a meetup pass on your details with [this form](https://docs.google.com/a/glasgowjs.com/spreadsheet/viewform?formkey=dHRGay1hUm53aTkxX0JiLTV6RnVwaVE6MQ).
+
+              You can hit us up on twitter, [@GLWjs](https://twitter.com/GLWjs)
+
+              Email [info@glasgowjs.com](mailto:info@glasgowjs.com).
+
